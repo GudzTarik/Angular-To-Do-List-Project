@@ -1,0 +1,55 @@
+@import "src/styles/variables";
+
+.search-field {
+  margin: 24px 0;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+
+  .todo-item {
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-grey;
+    }
+  }
+}
+
+.add-todo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: $color-blue;
+  font-weight: 500;
+  width: max-content;
+
+  .icon {
+    margin-right: 12px;
+  }
+}
+
+.task-form {
+  p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: $color-blue;
+  }
+}
+
+.no-data-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: $color-dark;
+  text-align: center;
+  margin: 64px 0 24px;
+}
+
+.no-data-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: $color-grey;
+  text-align: center;
+}

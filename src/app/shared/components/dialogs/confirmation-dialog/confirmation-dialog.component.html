@@ -1,0 +1,20 @@
+<div class='dialog-wrapper'>
+  <mat-icon [svgIcon]="'close-icon'"
+            (click)='reject()'
+            class='close-icon'>
+  </mat-icon>
+
+  <h2>{{dialogData.title}}</h2>
+
+  <div class='dialog-button-wrapper'>
+    <button (click)='reject()'
+            color="primary"
+            mat-flat-button>Cancel
+    </button>
+
+    <button (click)='confirm()'
+            color="warn"
+            mat-flat-button>Confirm
+    </button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+@import "src/styles/variables";
+
+.task-form {
+  border: 1px solid $color-grey;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.fields-row, .controls {
+  display: flex;
+  column-gap: 24px;
+}
+
+.fields-row {
+  margin-bottom: 12px;
+  width: 100%;
+
+  .field {
+    flex: 1;
+  }
+}
+
+.controls {
+  margin-top: 32px;
+  justify-content: center;
+}

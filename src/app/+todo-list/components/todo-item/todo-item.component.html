@@ -1,0 +1,38 @@
+<div *ngIf="!editTaskMode"
+     [ngClass]="{'done': todoItem.done}"
+     class="todo-item">
+  <div class="todo-info">
+    <mat-checkbox (change)="markAsDone($event.checked)"
+                  [checked]="todoItem.done"
+                  color="primary">
+    </mat-checkbox>
+
+    <div class="todo-details">
+      <p class="label">{{todoItem.label}}</p>
+
+      <p class="description">{{todoItem.description}}</p>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="category-wrapper">
+      <div class="category">{{todoItem.category}}</div>
+    </div>
+
+    <mat-icon (click)="toggleTaskForm()"
+              class="icon"
+              svgIcon="edit-icon">
+    </mat-icon>
+
+    <mat-icon (click)="deleteTodoItem()"
+              class="icon"
+              svgIcon="delete-icon">
+    </mat-icon>
+  </div>
+</div>
+
+<div *ngIf="editTaskMode"
+     class="task-form">
+  <app-task-form (save)="editTask($event)"
+                 [todoItem]="todoItem"></app-task-form>
+</div>

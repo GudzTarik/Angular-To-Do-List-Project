@@ -1,0 +1,27 @@
+@import "src/styles/variables";
+
+.dialog-wrapper {
+  position: relative;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0 16px;
+  }
+}
+
+.close-icon {
+  position: absolute;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.dialog-button-wrapper {
+  display: flex;
+  justify-content: center;
+  column-gap: 24px;
+}

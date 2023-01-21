@@ -1,0 +1,41 @@
+<div (click)="toggleCreateTaskForm()"
+     *ngIf="!createNewTaskMode"
+     class="add-todo">
+  <mat-icon class="icon"
+            svgIcon="add-icon"></mat-icon>
+
+  <span>Add new task</span>
+</div>
+
+<div *ngIf="createNewTaskMode"
+     class="task-form">
+  <p>Add new task</p>
+
+  <app-task-form (save)="addTask($event)"></app-task-form>
+</div>
+
+<div *ngIf="todoItems.length; else noRecordsFound">
+  <mat-form-field class="search-field">
+    <mat-label>Search</mat-label>
+
+    <input [formControl]="searchFormControl"
+           matInput>
+  </mat-form-field>
+
+  <div class="todo-list">
+    <app-todo-item (delete)="deleteTodoItem(todoItem.id)"
+                   (update)="updateTodoItem($event)"
+                   *ngFor="let todoItem of filteredTodoItems; trackBy: todoItemsTrackFn"
+                   [todoItem]="todoItem"
+                   class="todo-item">
+    </app-todo-item>
+  </div>
+
+  <p *ngIf="!filteredTodoItems.length" class="no-data-title">No records found</p>
+</div>
+
+<ng-template #noRecordsFound>
+  <p class="no-data-title">No records found</p>
+
+  <p class="no-data-subtitle">Start you work with creating new tasks</p>
+</ng-template>
