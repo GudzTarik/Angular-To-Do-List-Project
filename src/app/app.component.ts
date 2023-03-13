@@ -38,12 +38,12 @@ export class AppComponent implements OnInit {
       console.log('first iteration element', element);
 
       for (let j = i + 1; j < array.length; j++) {
-          if (element === array[j]) {
-            console.log ('elements are equal');
+        if (element === array[j]) {
+          console.log('elements are equal');
 
         } else {
-            console.log ('elements are not equal');
-          }
+          console.log('elements are not equal');
+        }
         console.log(amount);
       }
     }
